@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>吴的个人网站 - 留言页面</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/user.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* 页面容器 */
+       .w_page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 导航栏 */
+       .w_nav {
+            background-color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* 网站 logo */
+       .w_logo {
+            font-size: 28px;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+       .w_logo:hover {
+            transform: scale(1.1) rotate(-3deg);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 导航链接列表 */
+       .w_nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 导航链接项 */
+       .w_nav-links li {
+            margin-left: 30px;
+        }
+
+        /* 导航链接 */
+       .w_nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            padding: 10px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+       .w_nav-links a:hover {
+            background-color: #007BFF;
+            color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px);
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        #active {
+            background: #007BFF;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* 顶部标题样式 */
+       .top {
+            text-align: center;
+            margin: 60px 0;
+            font-size: 42px;
+            font-weight: bold;
+            color: #3498db;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 用户信息盒子样式 */
+       .user-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 60px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 用户头像样式 */
+       .user-box img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 标题样式 */
+       .user-box h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 联系方式样式 */
+       .user-box p {
+            font-size: 20px;
+            color: #777;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 手机端适配 */
+        @media (max-width: 768px) {
+           .w_nav {
+                flex-direction: column;
+            }
+
+           .w_nav-links li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w_page-wrapper">
+        <nav class="navbar navbar-expand-md w_nav">
+            <div class="container-fluid">
+                <a class="w_logo navbar-brand" href="#">吴的网站</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav w_nav-links ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html">首页</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./portfolio.html">作品集</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./user.html" id="active">留言</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="top">
+            <div>温馨留言</div>
+            <p>MESSAGE - A Place to Share Your Thoughts</p>
+        </div>
+        <div class="user-box">
+            <img src="./images/personage.jpg" alt="">
+            <h1>衷心感谢你的关注！</h1>
+            <p>随时联系我：3415045383@qq.com</p>
+        </div>
+        <script>
+            function tod(url) {
+                window.location.href = url;
+            }
+        </script>
+    </div>
+</body>
+
+</html>

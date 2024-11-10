@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>吴的个人网站</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url(images/background.jpg);
+        }
+
+        /* 为轮播图中的图片设置固定高度 */
+       .carousel-item img {
+            height: 800px;
+            object-fit: cover;
+        }
+
+        /* 手机端适配 */
+        @media (max-width: 768px) {
+           .carousel-item img {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w_page-wrapper">
+        <nav class="navbar navbar-expand-md w_nav">
+            <div class="container-fluid">
+                <a class="w_logo navbar-brand" href="#">吴的网站</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav w_nav-links ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html" id="active">首页</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./portfolio.html">作品集</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./user.html">留言</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section class="w_info">
+            <img src="./images/personage.jpg" alt="" class="profile-image">
+            <div class="info-content">
+                <h2 class="text-right">吴的网站</h2>
+                <p class="text-muted text-right">JILI WU‘S WEBSITE</p>
+                <div class="about-me">
+                    大家好，我是 1。我毕业于厦门大学设计传达专业。在学习生涯中，我不断探索和实践，努力提升自己的设计能力。我对设计充满热情，喜欢用创意和灵感来诠释生活中的美好。我相信，通过不断学习和努力，我能在设计领域中展现出自己的独特魅力，为大家带来更多精彩的设计作品。
+                </div>
+            </section>
+        <section class="w_content">
+            <div class="row">
+                <div class="col-md-6 left-title">
+                    <h3>设计源于生活，细节成就品质</h3>
+                    <span>Design comes from life, and details make quality.</span>
+                </div>
+                <div class="col-md-6 right-section">
+                    <div class="w_software-title">
+                        <h4>常用软件</h4>
+                        <span>Commonly used software</span>
+                    </div>
+                    <div class="w_tools">
+                        <img src="./images/pr.png" alt="" class="mr-3" height="80px" width="80px">
+                        <img src="./images/id.png" alt="" class="mr-3" height="80px" width="80px">
+                        <img src="./images/ai.png" alt="" class="mr-3" height="80px" width="80px">
+                        <img src="./images/ps.png" alt="" class="mr-3" height="80px" width="80px">
+                    </div>
+                </div>
+            </div>
+            <div class="new-section">
+                <audio id="music-player" src="./audio/Things you said.mp3" autostart="true" loop="3" hidden="true"></audio>
+                <div class="music-progress">
+                    <div class="music-progress-bar"></div>
+                </div>
+                <div class="music-controls">
+                    <span>正在播放：Things you said</span>
+                    <button onclick="toggleMusic()"><img src="./images/stop.png" alt="播放" id="play-icon"></button>
+                </div>
+            </div>
+            <!-- 添加轮播图 -->
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./images/bg1.png" class="d-block w-100" alt="图片 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/bg2.png" class="d-block w-100" alt="图片 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/bg3.png" class="d-block w-100" alt="图片 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/bg4.png" class="d-block w-100" alt="图片 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/bg5.png" class="d-block w-100" alt="图片 3">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+    </div>
+    <script>
+        const musicPlayer = document.getElementById('music-player');
+        const progressBar = document.querySelector('.music-progress-bar');
+
+        // 更新进度条
+        musicPlayer.addEventListener('timeupdate', () => {
+            const duration = musicPlayer.duration;
+            const currentTime = musicPlayer.currentTime;
+            const progress = (currentTime / duration) * 100;
+            progressBar.style.width = progress + '%';
+        });
+
+        let isPlaying = false;
+
+        function toggleMusic() {
+            if (isPlaying) {
+                musicPlayer.pause();
+                document.getElementById('play-icon').src = './images/play.png';
+            } else {
+                musicPlayer.play();
+                document.getElementById('play-icon').src = './images/stop.png';
+            }
+            isPlaying =!isPlaying;
+        }
+
+        // 尝试自动播放音乐
+        function attemptAutoPlay() {
+            musicPlayer.play().catch(error => {
+                if (error.name === "NotAllowedError") {
+                    // 用户禁止了自动播放，提供一个按钮让用户手动播放
+                    document.getElementById('play-icon').style.display = 'block';
+                } else if (error.name === "AbortError") {
+                    // 音频加载被中断，可能是网络问题等，可尝试再次加载音频并播放
+                    musicPlayer.src = './audio/Things you said.mp3';
+                    attemptAutoPlay();
+                } else {
+                    console.error('播放错误：', error);
+                }
+            });
+        }
+
+        attemptAutoPlay();
+    </script>
+</body>
+
+</html>
